@@ -1,0 +1,49 @@
+<div class="admin-container">
+  <h2>Administración de Productos</h2>
+
+  <div class="search-section">
+    <select [(ngModel)]="criterioBusqueda" class="filter-select">
+      <option value="nombre">Nombre</option>
+      <option value="categoria">Categoría</option>
+      <option value="id">ID de Producto</option>
+    </select>
+
+    <input 
+      type="text" 
+      placeholder="Escribe para buscar..." 
+      class="search-input"
+      [(ngModel)]="textoBusqueda" 
+    />
+  </div>
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Categoría</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Stock Mínimo</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (producto of productosFiltrados; track producto.idproducto) {
+        <tr>
+          <td>{{ producto.idproducto }}</td>
+          <td>{{ producto.nombre }}</td>
+          <td>{{ producto.categoria }}</td>
+          <td>${{ producto.precio }}</td>
+          <td [ngStyle]="{'color': producto.stock <= producto.stock_minimo ? 'red' : 'black', 'font-weight': producto.stock <= producto.stock_minimo ? 'bold' : 'normal'}">
+            {{ producto.stock }}
+          </td>
+          <td>{{ producto.stock_minimo }}</td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="6" class="empty-message">No se encontraron productos con esa búsqueda.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
