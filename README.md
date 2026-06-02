@@ -5,6 +5,7 @@ DIAGRAMA (Link escalidraw):
 https://excalidraw.com/#room=b3c264584a33a6712744,5dp9DEt77sifhOinvWR_NQ
 
 # dependencias backend
+npm install
 npm install express mysql2 bcryptjs jsonwebtoken dotenv cors
 npm install --save-dev nodemon
 npm install cors
