@@ -15,13 +15,15 @@ app.use((req, res, next) => {
 const authRoutes = require('./src/routes/auth.routes');
 require('./src/config/db');
 
-app.use('/api/auth', authRoutes);
+app.use('/api/auth', authRoutes); //login y register?
+app.use('/api/productos', require('./src/routes/admin-productos.routes')); // gestion productos (admin)
 
 app.get('/', (req, res) => {
     res.send('Servidor SSM-ADM funcionando');
 });
 
-const PORT = process.env.PORT || 3002;
+
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Servidor en http://localhost:${PORT}`);
 });
