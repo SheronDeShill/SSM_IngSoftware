@@ -14,11 +14,11 @@ export class dashboardComponent {
     constructor (private router: Router) {}
 
     irAProductos() {
-        this.router.navigate(['/administrar-productos']);
+        this.router.navigate(['/admin-productos']);
     }
 
     irAUsuarios() {
-        this.router.navigate(['/administrar-usuarios']);
+        this.router.navigate(['/admin-usuarios']);
     }  
 
     cerrarSesion() {
