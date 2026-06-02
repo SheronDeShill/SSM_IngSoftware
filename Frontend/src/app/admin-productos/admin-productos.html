@@ -19,6 +19,11 @@
         class="search-input"
         [(ngModel)]="textoBusqueda" 
       />
+
+      <div class="btn-registrar-wrapper">
+        <button class="btn-registrar" type="button">+</button>
+        <span class="btn-registrar-label">registrar producto</span>
+      </div>
     </div>
 
     <table class="product-table">
@@ -30,6 +35,7 @@
           <th>Precio</th>
           <th>Stock</th>
           <th>Stock Mínimo</th>
+          <th>Acción</th>
         </tr>
       </thead>
       <tbody>
@@ -43,10 +49,17 @@
               {{ producto.stock }}
             </td>
             <td>{{ producto.stock_minimo }}</td>
+            <td>
+              <div class="accion-btns">
+                <button class="btn-accion btn-add" type="button" title="Agregar">+</button>
+                <button class="btn-accion btn-edit" type="button" title="Editar">✏️</button>
+                <button class="btn-accion btn-delete" type="button" title="Eliminar">🗑️</button>
+              </div>
+            </td>
           </tr>
         } @empty {
           <tr>
-            <td colspan="6" class="empty-message">No se encontraron productos con esa búsqueda.</td>
+            <td colspan="7" class="empty-message">No se encontraron productos con esa búsqueda.</td>
           </tr>
         }
       </tbody>
