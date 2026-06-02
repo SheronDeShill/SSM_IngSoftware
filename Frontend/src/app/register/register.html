@@ -1,23 +1,24 @@
 <div class="register-container">
-  <h2>Crear Cuenta de Chat</h2>
   <form (ngSubmit)="onSubmit()">
+    <h2>Crear Cuenta</h2>
+
     <div>
-      <label>Nombre de Usuario:</label>
-      <input type="text" [(ngModel)]="nuevoUsuario.nombre_usuario" name="nombre_usuario" required>
+      <label>Nombre de Usuario</label>
+      <input type="text" [(ngModel)]="nuevoUsuario.nombre_usuario" name="nombre_usuario" required placeholder="Tu nombre">
     </div>
     
     <div>
-      <label>Correo Electrónico:</label>
-      <input type="email" [(ngModel)]="nuevoUsuario.email" name="email" required>
+      <label>Correo Electrónico</label>
+      <input type="email" [(ngModel)]="nuevoUsuario.email" name="email" required placeholder="tu@correo.com">
     </div>
     
     <div>
-      <label>Contraseña:</label>
-      <input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required>
+      <label>Contraseña</label>
+      <input type="password" [(ngModel)]="nuevoUsuario.contrasena" name="contrasena" required placeholder="••••••••">
     </div>
     
     <button type="submit">Registrarse en el Sistema</button>
+
+    <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
   </form>
-  
-  <p>¿Ya tienes cuenta? <a routerLink="/login">Inicia sesión aquí</a></p>
 </div>

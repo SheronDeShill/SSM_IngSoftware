@@ -29,7 +29,8 @@ export class AdminProductosComponent implements OnInit {
   cargarProductos(): void {
     this.productoService.obtenerProductos().subscribe({
       next: (datos) => {
-        this.productos = datos;
+
+        this.productos = datos.filter((producto: any) => producto.activo === 1);
         console.log('Productos cargados:', this.productos);
 
         this.cdr.detectChanges();
