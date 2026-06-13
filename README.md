@@ -20,3 +20,18 @@ npm run dev
 
 # frontend start
 ng serve
+
+.env.template
+DB_HOST=localhost
+DB_USER=tu_usuario_de_mysql
+DB_PASSWORD=tu_contraseña_de_mysql
+DB_NAME=nombre_de_la_base_de_datos
+PORT=3002
+
+env.ts.template:
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:3000/api', 
+  socketUrl: 'http://localhost:3000',
+  socketPath: '/socket.io'
+};
