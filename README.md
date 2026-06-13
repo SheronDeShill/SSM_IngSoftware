@@ -11,6 +11,7 @@ npm install --save-dev nodemon
 npm install cors
 
 # dependencias frontend
+npm install
 npm install -g @angular/cli
 
 
