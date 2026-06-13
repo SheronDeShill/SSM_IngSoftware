@@ -35,3 +35,9 @@ export const environment = {
   socketUrl: 'http://localhost:3000',
   socketPath: '/socket.io'
 };
+
+
+
+para iniciar el sistema dev:
+en backend (.env.dev): $env:NODE_ENV="production"; node server.js
+en frontend(env.ts): ng serve
