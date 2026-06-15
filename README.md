@@ -39,5 +39,6 @@ export const environment = {
 
 
 para iniciar el sistema dev:
-en backend (.env.dev): $env:NODE_ENV="production"; node server.js
+en backend (.env.dev): $env:NODE_ENV="development"; node server.js
+(.env.prod): $env:NODE_ENV="production"; node server.js
 en frontend(env.ts): ng serve
